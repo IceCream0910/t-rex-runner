@@ -15,7 +15,7 @@
         <br><br><br><br>
         <div style="margin:20px;">
             <h2>인터넷 연결 없음</h2>
-            다음 방법을 시도해 보세요.<br>
+            <b id="tip"></b><br>
             <li>네트워크 케이블, 모뎀, 라우터 확인</li>
             <li>Wi-Fi에 다시 연결</li>
             <li>네트워크 진단 프로그램 실행</li><br>
@@ -24,8 +24,17 @@
 
     </div>
 
+    <script>
+        const isMobile = () => {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+        }
 
-
+        if (isMobile()) {
+            document.getElementById('tip').innerHTML = '게임을 시작하려면 신건을 클릭하세요.';
+        } else {
+            document.getElementById('tip').innerHTML = '게임을 시작하려면 스페이스 키나 방향 키를 눌러주세요.';
+        }
+    </script>
 
     <div id="offline-resources">
         <img id="offline-resources-1x" src="assets/offline-sprite-1x.png">
